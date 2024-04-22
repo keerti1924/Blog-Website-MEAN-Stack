@@ -1,0 +1,137 @@
+.section-gap {
+	padding: 150px 0;
+	@media (max-width: 1199px) {
+		padding: 100px 0;
+	}
+	@media (max-width: 991px) {
+		padding: 60px 0;
+	}
+}
+
+/* Main Title Area css
+============================================================================================ */
+#back-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    z-index: 9999999;
+    a {
+        background: $black;
+        display: block;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        padding: 8px;
+        @include transition();
+        i {
+            font-size: 22px;
+            color: #ffffff;
+        }
+        &:hover {
+            box-shadow: 0 8px 12px #dddddd;
+        }
+    }
+}
+
+
+// Border
+.all-side-b {
+    border: 1px solid #dddddd;
+}
+
+
+.three-side-b {
+    border-width: 1px 1px 1px 0px !important;
+    border-radius: 0 5px 5px 0 !important;
+}
+
+.three-side-b-c {
+    border-color: $baseColor!important;
+    border-width: 1px 1px 1px 0px !important;
+    border-radius: 0 5px 5px 0 !important;
+}
+
+
+/* Main Title Area css
+============================================================================================ */
+
+.main_title {
+    text-align: left;
+	max-width: 510px;
+	margin-bottom: 50px;
+    h1 {
+        font-weight: bold;
+		font-size: 48px;
+		@media (max-width: 576px) {
+			font-size: 30px;
+		}
+    }
+    p {
+		margin-top: 30px;
+		font-size: 16px;
+		@media (max-width: 991px) {
+			margin-top: 15px;
+		}
+    }
+}
+
+/* End Main Title Area css
+============================================================================================ */
+
+.blog-meta {
+	border-bottom: 1px solid #dddddd;
+	padding: 10px 0;
+	a {
+		color: $pfont;
+	}
+	.meta {
+		font-size: 13px;
+		@media (max-width: 1440px) and (min-width: 992px) {
+			font-size: 11px;
+		}
+		@media (max-width: 1199px) and (min-width: 992px) {
+			display: none;
+		}
+		span {
+			margin-right: 5px;
+		}
+		.icon {
+			margin-left: 24px;
+			&:first-child {
+				margin-left: 0;
+			}
+			@media (max-width: 1440px) {
+                margin-left: 10px;
+            }
+		}
+	}
+	.read_more {
+		color: $black;
+		font-size: 15px;
+		font-weight: 500;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	&.white {
+		color: #ffffff;
+		.meta {
+			.icon {
+				color: #ffffff;
+			}
+		}
+		.read_more {
+			color: #ffffff;
+		}
+	}
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}

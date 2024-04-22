@@ -1,0 +1,108 @@
+<app-header></app-header>
+
+<!--================ Banner Area =================-->
+<section class="home_banner_area banner_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-7">
+                <div class="blog_text_slider">
+                    <div class="blog_text">
+                        <img class="img-fluid" src="../../../assets/img/banner/contact-img.png" alt="">
+                        <div class="blog-meta bottom d-flex justify-content-start align-items-center flex-wrap">
+                            <div>
+                                <a class="read_more" href="/">Home</a>
+                                <span class="lnr lnr-arrow-right"></span>
+                                <a class="read_more" href="/contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================ End Banner Area =================-->
+
+<!--================Contact Area =================-->
+<section class="contact_area section-gap">
+    <div class="container mt-5 ">
+
+        <div class="row mt-5 mb-5 p-2">
+            <h4 class="mb-4">Get in Touch with Fantasy!</h4>
+            <p>At Fantasy, we're always excited to connect with fellow fantasy enthusiasts! Whether you have a question, a comment, or just want to chat about your favorite fantasy novels, we'd love to hear from you.</p>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-3">
+                <div class="contact_info">
+                    <div class="info_item">
+                        <i class="lnr lnr-home"></i>
+                        <h6>Bangalore, Karnataka, India</h6>
+                        <p>Yeshwanthpur,Bangalore</p>
+                    </div>
+                    <div class="info_item">
+                        <i class="lnr lnr-phone-handset"></i>
+                        <h6><a href="#">+91 8683045908</a></h6>
+                        <p>Mon to Fri 9am to 6 pm</p>
+                    </div>
+                    <div class="info_item">
+                        <i class="lnr lnr-envelope"></i>
+                        <h6><a href="mailto:keertidvcorai@gmail.com">fantasyblog&#64;gmail.com</a></h6>
+                        <p>Send us your query anytime!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+
+                <div *ngIf="successMessage" class="alert alert-success text-center">
+                    {{ successMessage }}
+                  </div>
+                  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+                    {{ errorMessage }}
+                  </div>
+
+                <form class="row contact_form bg-secondary py-4" #contactForm="ngForm" (ngSubmit)="submitContactForm()" id="contactForm">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
+                             ngModel required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Enter email address" ngModel required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="subject" name="subject"
+                                placeholder="Enter Subject" ngModel required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" id="message" rows="1"
+                                placeholder="Enter Message" ngModel required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <button type="submit" value="submit" class="btn submit_btn"
+                        >Send Message</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h4 class="mb-4">We're Here to Help</h4>
+                <p>
+                    At Fantasy, we're committed to providing you with the best possible experience. No matter what your inquiry, our team is here to assist you. Thank you for being a part of our fantastical journey!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================Contact Area =================-->
+
+<app-footer></app-footer>

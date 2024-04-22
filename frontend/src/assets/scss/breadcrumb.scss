@@ -1,0 +1,169 @@
+/* Home Banner Area css
+============================================================================================ */
+
+.home_banner_area {
+    .owl-dots {
+        text-align: center;
+        margin-top: -68px;
+        margin-bottom: 42px;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        @media(max-width: 992px) {
+            margin-top: 30px;
+        }
+        @media(max-width:768px) {
+            display: none !important;
+        }
+    }
+    .owl-dot {
+        position: relative;
+        height: 2px;
+        width: 50px;
+        display: inline-block;
+        background: rgba(238, 238, 238, 0.45);
+        @include transition();
+    }
+    .owl-dot.active {
+        height: 6px;
+        top: 2px;
+        @include transition;
+        background: #ffffff;
+        border-radius: 7px;
+    }
+    .slide-item {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: cover;
+        height: 752px;
+        @media (max-width: 1440px) {
+            background-position: 48% 100%;
+        }
+        @media (max-width: 991px) {
+            background-position: initial;
+        }
+
+        @media (max-width: 767px) {
+            height: 618px;
+        }
+        @media (max-width: 320px) {
+            height: 568px;
+        }
+    }
+    .blog_text_slider {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        position: relative;
+    }
+    &.banner_area {
+        background: url(../img/banner/home-banner.jpg) no-repeat scroll center left;
+        @media (max-width: 1440px) {
+            background-position: 49% 100%;
+        }
+        @media (max-width: 9910px) {
+            background-position: 0 0;
+        }
+        .blog_text_slider {
+            padding: 0;
+        }
+        .blog_text {
+            padding: 70px 91px 70px 91px;
+            @media (max-width: 1199px) {
+                margin-top: 130px;
+            }
+            @media (max-width: 991px) {
+                margin-top: 105px;
+                padding: 60px 20px;
+            }
+            @media (max-width: 480px) {
+                margin-top: 70px;
+            }
+        }
+        .lnr-arrow-right {
+            color: #000000;
+            font-weight: 500;
+            position: relative;
+            top: 2px;
+            margin: 0 5px;
+        }
+    }
+}
+
+.blog_text {
+    padding: 80px 65px 80px 91px;
+    @media (max-width: 1250px) {
+        background: #ffffff;
+    }
+    .bottom {
+        margin-top: 75px;
+        margin-left: 116px;
+        padding: 0 30px 10px;
+        @media (max-width: 1250px) {
+            margin-left: 19px;
+        }
+        @media (max-width: 991px) {
+            margin-left: 0px;
+        }
+        @media (max-width: 400px) {
+            padding: 0 0 10px;
+        }
+    }
+}
+
+.blog_banner {
+    min-height: 780px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: 0px;
+    .banner_inner {
+        background: #04091e;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        min-height: 780px;
+        z-index: 1;
+        .overlay {
+            background: url(../img/banner/banner-2.jpg) no-repeat scroll center center;
+            opacity: .5;
+            height: 125%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            z-index: -1;
+        }
+        .blog_b_text {
+            max-width: 700px;
+            margin: auto;
+            color: #fff;
+            margin-top: 80px;
+            h2 {
+                font-size: 60px;
+                font-weight: 500;
+                font-family: $primary-font;
+                line-height: 66px;
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 16px;
+                margin-bottom: 35px;
+            }
+            .white_bg_btn {
+                line-height: 42px;
+                padding: 0px 45px;
+            }
+        }
+    }
+}
+
+.banner_box {
+    max-width: 1620px;
+    margin: auto;
+}
+
+/* End Home Banner Area css
+============================================================================================ */

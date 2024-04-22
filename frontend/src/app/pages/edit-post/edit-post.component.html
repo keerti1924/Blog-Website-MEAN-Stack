@@ -1,0 +1,40 @@
+<app-header></app-header>
+@if (post.singlePost) {
+<div class="wrapper">
+  <div class="inner">
+      <form #editPost="ngForm"
+      (ngSubmit)="editForm()">
+          <h3>Edit Post</h3>
+
+
+          <div class="form-holder">
+              <textarea class="form-control" cols="30" rows="10" placeholder="Title" name="title" [ngModel]="post.singlePost.title" required></textarea>
+          </div>
+          <div class="form-holder">
+              <textarea name="content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" [ngModel]="post.singlePost.content" required></textarea>
+          </div>
+          <div class="form-holder">
+            <select id="categories" name="categories" class="form-control" required
+            [ngModel]="post.singlePost.categories" placeholder="Choose any Category...">
+              <option value="">Category...</option>
+              <option value="travel">Travel</option>
+              <option value="technology">Technology</option>
+              <option value="health">Health</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="music">Music</option>
+              <option value="news">News</option>
+            </select>
+          </div>
+
+          <div class="form-holder">
+            <input type="file" class="form-control" name="file"  [ngModel]="post.singlePost.cover" required (change)="onFileSelected($event)">
+          </div>
+
+          <button type="submit" >
+              <span>Save</span>
+          </button>
+      </form>
+  </div>
+  
+</div>
+}

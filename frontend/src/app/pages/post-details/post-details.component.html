@@ -1,0 +1,86 @@
+
+<app-header></app-header>
+
+<!--================ Banner Area =================-->
+<section class="home_banner_area banner_area">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-5"></div>
+          <div class="col-lg-7">
+              <div class="blog_text_slider">
+                  <div class="blog_text">
+                      <img class="img-fluid" src="../../../assets/img/banner/post-details-img.png" alt="">
+                      <div class="blog-meta bottom d-flex justify-content-start align-items-center flex-wrap">
+                          <div>
+                              <a class="read_more" href="/">Home</a>
+                              <span class="lnr lnr-arrow-right"></span>
+                              <a class="read_more" href="#" >Post Details</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--================ End Banner Area =================-->
+
+<!--================Blog Area =================-->
+
+<div *ngIf="successMessage" class="alert alert-success text-center py-2">
+    {{ successMessage }}
+</div>
+<section class="blog_area section-gap single-post-area">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="main_blog_details">
+                  <img class="img-fluid" src="http://localhost:4000/uploads/{{PostsDetails.cover}}" alt="{{PostsDetails.title}}" style="height: 500px; width:100%">
+
+                  <h4>{{ PostsDetails.title }}</h4>
+                  <div class="user_details">
+                      <div class="float-left">
+                          <a href="#" class="text-capitalize bg-dark text-white">{{ PostsDetails.categories }}</a>
+                      </div>
+                      <div class="float-right">
+                          <div class="media">
+                              <div class="media-body">
+                                  <h5 class="text-capitalize">{{ PostsDetails.author.username }}</h5>
+                                  <p>{{ PostsDetails.createdAt | date : "medium" }}</p>
+                              </div>
+                              <div class="d-flex">
+                                  <img src="../../../assets/img/default-user.jpg" alt="user" style="height: 50px; width: 50px; border-radius: 50%;">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <p>{{ PostsDetails.content}}</p>
+              </div>
+          </div>
+      </div>
+       
+      <div class="row">
+        <div class="col-12 text-center mt-5 d-flex justify-content-end">
+          @if (auth.username===PostsDetails.author.username) {
+              <button
+              class="btn submit_btn mr-2"
+              [routerLink]="['/edit-post', PostsDetails._id]"
+            >
+              Edit Post
+            </button>
+
+            <button
+              class="btn submit_btn"
+              (click)="deletePost(PostsDetails._id)"
+            >
+              Delete Post
+            </button>
+            }
+        </div>
+      </div>
+  </div>
+</section>
+<!--================Blog Area =================-->
+
+<app-footer></app-footer>

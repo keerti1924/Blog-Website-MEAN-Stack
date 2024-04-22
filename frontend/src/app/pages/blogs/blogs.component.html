@@ -1,0 +1,91 @@
+<style>
+    .blog_area .main_blog_details img{
+        height: 500px;
+        width: 100%;
+    }
+    @media (max-width:767px){
+        .blog_area .main_blog_details img{
+        height: 200px;
+    }
+    }
+</style>
+
+<app-header></app-header>
+
+
+<!--================ Banner Area =================-->
+<section class="home_banner_area banner_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-7">
+                <div class="blog_text_slider p-5">
+                    <div class="blog_text text-center">
+                        <img class="img-fluid" src="../../../assets/img/banner/blog-banner.png" alt="">
+                        <div class="blog-meta bottom d-flex justify-content-start align-items-center flex-wrap">
+                            <div>
+                                <a class="read_more" href="/">Home</a>
+                                <span class="lnr lnr-arrow-right"></span>
+                                <a class="read_more" href="/blogs">Blogs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================ End Banner Area =================-->
+
+
+<!-- Start Sample Area -->
+<section class="sample-text-area">
+    <div class="container">
+        <h3 class="text-heading title_color">Welcome to the Realm of Fantasy: Explore Our Ever-Expanding World!</h3>
+        <p class="sample-text">
+            Welcome to the library of enchantment! Below you'll find a curated collection of all the fantastical tales, insightful analyses, and magical musings that our team of adventurers has crafted for your enjoyment. Whether you're seeking epic adventures, mystical creatures, or profound insights into the realms of fantasy, you're sure to find something to ignite your imagination.
+        </p>
+    </div>
+</section>
+<!-- End Sample Area -->
+
+<!--================Blog Area =================-->
+<section class="blog_area section-gap single-post-area">
+    <div class="container">
+        <div class="row">
+            @for (post of posts.allPosts; track $index) {
+            <div class="col-lg-12 col-md-12">
+                <div class="main_blog_details">
+                    <img class="img-fluid" src="http://localhost:4000/uploads/{{post.cover}}" alt="{{post.title}}">
+                    <a href="#" [routerLink]="['/post-details',post._id]">
+                        <h4>{{post.title}}</h4>
+                    </a>
+                    <div class="user_details">
+                        <div class="float-left">
+                            <a href="#" class="bg-dark text-light text-capitalize">{{post.categories}}</a>
+                        </div>
+                        <div class="float-right">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h5 class="text-capitalize">{{post.author.username}}</h5>
+                                    <p>{{ post.createdAt|date:"medium" }}</p>
+                                </div>
+                                <div class="d-flex">
+                                    <img src="../../../assets/img/default-user.jpg" alt="user" style="height: 50px; width: 50px; border-radius: 50%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>{{ post.content | slice:0:500}}...</p>
+                </div>
+
+            </div>
+        }
+        </div>
+    </div>
+</section>
+<!--================Blog Area =================-->
+
+
+
+<app-footer></app-footer>

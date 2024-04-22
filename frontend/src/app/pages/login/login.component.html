@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="wrapper">
+    
+    <div class="inner">
+        <img src="../../../assets/img/image-1.png" alt="" class="image-1">
+        <form #login="ngForm"
+        (ngSubmit)="checklogin()">
+            <h3>Login</h3>
+  
+              <div *ngIf="auth.errorMessage" class="alert alert-danger text-center">
+                {{ auth.errorMessage }}
+              </div> 
+              
+            <div class="form-holder">
+                <span class="lnr lnr-envelope"></span>
+                <input type="email" class="form-control" placeholder="Email" name="email" ngModel required>
+            </div>
+            <div class="form-holder">
+                <span class="lnr lnr-lock"></span>
+                <input type="password" class="form-control" placeholder="Password" name="password" ngModel required>
+            </div>
+
+            <button type="submit">
+                <span>Login</span>
+            </button>
+            <p class="text-center mt-4">Don't have an account? <a href="/signup">Signup</a></p>
+        </form>
+        <img src="../../../assets/img/image-2.png" alt="" class="image-2">
+    </div>
+    
+</div>

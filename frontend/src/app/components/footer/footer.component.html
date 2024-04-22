@@ -1,0 +1,47 @@
+<!--================ start footer Area  =================-->
+<footer class="footer-area section-gap">
+	<div class="container">
+		<div class="single-footer-widget footer_middle">
+			<img src="img/logo.png" alt="">
+			<p class="mt-50">Stay updated with our latest trends</p>
+			<div id="mc_embed_signup">
+				<form (ngSubmit)="subscribeForm()" #create="ngForm">
+					<div *ngIf="successMessage" class="alert alert-success text-center">
+						{{ successMessage }}
+					  </div>
+					  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+						{{ errorMessage }}
+					  </div>
+					<div class="input-group d-flex flex-row">
+
+						<input name="email" placeholder="Enter Email" type="email" id="email" ngModel required class="text-dark">
+
+						<button type="submit" class="btn sub-btn">
+							<span class="lnr lnr-arrow-right"></span>
+						</button>
+					</div>
+					<div class="mt-10 info"></div>
+				</form>
+			</div>
+		</div>
+		<div class="footer-bottom footer_copy">
+			<div class="footer-social">
+				<a href="https://github.com/keerti1924" target="_blank">
+					<i class="fa fa-github"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/keerti-vishwkarma-8ba754243/" target="_blank">
+					<i class="fa fa-linkedin"></i>
+				</a>
+				<a href="https://codepen.io/Keerti-Vishwkarma" target="_blank">
+					<i class="fa fa-codepen"></i>
+				</a>
+			</div>
+
+			<p class="col-lg-12 footer-text">
+				Copyright &copy; All rights reserved | This website is made with <i class="fa fa-heart-o"
+					aria-hidden="true"></i> by <a href="" target="_blank" class="text-white">Tech Buddies</a>
+			</p>
+		</div>
+	</div>
+</footer>
+<!--================ End footer Area  =================-->

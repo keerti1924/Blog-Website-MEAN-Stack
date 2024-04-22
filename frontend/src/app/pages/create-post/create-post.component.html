@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="wrapper">
+  <div class="inner">
+      <form (ngSubmit)="creatForm()"
+      #createPost="ngForm">
+          <h3>Create Post</h3>
+
+
+          <div class="form-holder">
+              <textarea class="form-control" placeholder="Title" name="title" cols="30" rows="10" ngModel required></textarea>
+          </div>
+          <div class="form-holder">
+              <textarea name="content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" ngModel required></textarea>
+          </div>
+          <div class="form-holder">
+            <select id="categories" name="categories" class="form-control" required
+            ngModel placeholder="Choose any Category...">
+              <option value="">Category...</option>
+              <option value="travel">Travel</option>
+              <option value="technology">Technology</option>
+              <option value="health">Health</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="music">Music</option>
+              <option value="news">News</option>
+            </select>
+          </div>
+
+          <div class="form-holder">
+            <input type="file" class="form-control" name="file" ngModel required (change)="onFileSelected($event)">
+          </div>
+
+          <button type="submit" [disabled]="createPost.invalid">
+              <span>Create</span>
+          </button>
+      </form>
+  </div>
+  
+</div>

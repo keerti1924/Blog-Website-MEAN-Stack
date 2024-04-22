@@ -1,0 +1,75 @@
+.list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+a{
+    text-decoration:none;
+    transition: all 0.3s ease-in-out;
+    &:hover, &:focus{
+       text-decoration:none;
+       outline: none;
+    }
+}
+.row.m0{
+    margin: 0px;
+}
+
+body{
+    line-height: 26px;
+    font-size: 14px;
+    font-family: $text-font;
+    font-weight: normal;
+    color: $pfont;
+}
+h1, h2, h3, h4, h5, h6{ 
+    font-family: $primary-font; 
+    font-weight: bold;
+    color: $black;
+    margin: 0;
+}
+
+button:focus{
+    outline: none;
+	box-shadow: none;
+}
+
+.p_120{
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+.p_100{
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.pad_top{
+	padding-top: 120px;
+}
+.mt-25{
+	margin-top: 25px;
+}
+.mt-50{
+	margin-top: 50px;
+}
+.mt-100{
+	margin-top: 100px;
+}
+.mt-240{
+	margin-top: 240px;
+}
+.mt-480{
+	margin-top: 480px;
+}
+.mt--60 {
+    margin-top: -60px;
+}
+.p0{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.container{
+    @media(min-width:1200px){
+        max-width: 1200px;
+    }
+}
